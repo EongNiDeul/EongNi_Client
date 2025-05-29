@@ -5,13 +5,13 @@ function LoginPage() {
   return (
     <>
       <div className={styles.container}>
-        <div className={styles.title}>로그인</div>
+        <div className={styles.title}>로그인 수정해봄</div>
 
         <div>
           <label>
             {" "}
             닉네임
-            <input type="text" placeholder="닉네임을 입력해주세요" className={styles.input}/>
+            <input type="text" placeholder="닉네임을 입력해주세요" className={styles.input} />
           </label>
         </div>
 
