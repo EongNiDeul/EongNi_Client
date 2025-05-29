@@ -1,16 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// App.tsx
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-     가현아 엉니가 다 세팅 했다.
-    </>
-  )
+    <Router>
+      <Main />
+    </Router>
+  );
 }
 
-export default App
+const Main = () => {
+  return (
+    <div className="App">
+      <Routes>
+        <Route path="/LoginPage" element={<LoginPage />} />
+      </Routes>
+    </div>
+  );
+};
+
+export default App;
