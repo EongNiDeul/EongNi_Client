@@ -1,0 +1,175 @@
+.pageWrapper {
+  background-color: #d9d9d9;
+  width: 1000px;
+  height: 100vh;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.innerBox {
+  width: 640px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.topSection {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.searchBarWrapper {
+  display: flex;
+  align-items: center;
+  background-color: #eeeeee;
+  padding: 10px 16px;
+  border-radius: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.searchIcon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  opacity: 0.5;
+}
+
+.searchBar {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #333;
+}
+
+.actionRow {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.sortBtn {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  padding: 6px 14px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.plusBtn {
+    background: none;
+    font-size: 54px;
+    padding: 0;
+    color: #757575;
+}
+
+.postList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.postCard {
+  background-color: white;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  padding: 20px;
+  width: 100%;
+}
+
+.postHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.writer {
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.date {
+  color: #555;
+  font-size: 13px;
+}
+
+.dateNote {
+  color: #999;
+  font-size: 12px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.edit,
+.delete {
+  background: none;
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.delete {
+  color: red;
+}
+
+.postTitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.postContent {
+  margin-top: 10px;
+  font-size: 15px;
+
+
+}
+
+.postInfo {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+
+}
+
+
+.sortWrapper {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 36px;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100px;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown div {
+  /* list-style: none; */
+  padding: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dropdown li:hover {
+  background-color: #f0f0f0;
+}
