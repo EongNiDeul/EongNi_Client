@@ -4,6 +4,7 @@ import "./App.css";
 import LoginPage from "./pages/LoginPage";
 import StartPage from "./pages/StartPage";
 import SignupPage from "./pages/SignupPage";
+import PostPage from "./pages/PostPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ const Main = () => {
         <Route path="/LoginPage" element={<LoginPage />} />
         {/* <Route path="/StartPage" element={<StartPage />} /> */}
         <Route path="/SignupPage" element={<SignupPage />} />
+        <Route path="/PostPage" element={<PostPage />} />
       </Routes>
     </div>
   );

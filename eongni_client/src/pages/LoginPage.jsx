@@ -1,7 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import styles from "../styles/pages/LoginPage.module.css";
 
 function LoginPage() {
+  const navigate = useNavigate();
+
   const [nickname, setNickname] = useState("");
   const [password, setPassword] = useState("");
 
@@ -9,6 +13,10 @@ function LoginPage() {
     e.preventDefault();
     console.log("닉네임:", nickname);
     console.log("비밀번호:", password);
+  };
+
+  const handlePost = () => {
+    navigate("/PostPage");
   };
 
   return (
@@ -40,7 +48,7 @@ function LoginPage() {
           />
         </div>
 
-        <button type="submit" className={styles.loginBtn}>
+        <button type="submit" className={styles.loginBtn} onClick={handlePost}>
           로그인
         </button>
       </form>
