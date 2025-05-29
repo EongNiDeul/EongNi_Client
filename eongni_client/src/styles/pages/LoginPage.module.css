@@ -1,0 +1,21 @@
+.container {
+    width: 1000px;
+    height: 500px;
+    background-color: rgb(153, 153, 153);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.title {
+color: #1E1E1E;
+font-family: Inter;
+font-size: 40px;
+font-style: normal;
+font-weight: 700;
+line-height: 150%; /* 60px */
+letter-spacing: -0.88px;
+}
+
