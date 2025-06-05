@@ -1,10 +1,12 @@
 import { useState } from "react";
 import styles from "../styles/pages/PostPage.module.css";
+import { useNavigate } from "react-router-dom";
 
 function PostPage() {
   const [search, setSearch] = useState("");
   const [sortOpen, setSortOpen] = useState(false);
   const [sortOption, setSortOption] = useState("정렬");
+  const navigate = useNavigate();
 
   const toggleSort = () => setSortOpen((prev) => !prev);
 
@@ -12,6 +14,10 @@ function PostPage() {
     setSortOption(option);
     setSortOpen(false);
     // 정렬 기능 추가 시 여기서 처리
+  };
+
+  const goToCreatePost = () => {
+    navigate("/CreatePostPage");
   };
 
   const posts = [
@@ -64,7 +70,7 @@ function PostPage() {
                 </div>
               )}
             </div>
-            <button className={styles.plusBtn}>＋</button>
+            <button className={styles.plusBtn} onClick={goToCreatePost}>＋</button>
             <div></div>
           </div>
         </div>

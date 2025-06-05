@@ -13,6 +13,9 @@ function LoginPage() {
     e.preventDefault();
     console.log("닉네임:", nickname);
     console.log("비밀번호:", password);
+
+    // 닉네임 저장
+    localStorage.setItem("nickname", nickname);
   };
 
   const handlePost = () => {

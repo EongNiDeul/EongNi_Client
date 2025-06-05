@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.nickname {
+    text-align: left;
+    font-size: 20px;
+}
+
+.titleBox {
+    display: flex;
+}
+
+.inputPostTitleLabel {
+    font-size: 30px;
+}
+
+.inputPostTitle {
+    font-size: 30px;
+    /* display: flex;
+    justify-content: flex-start;
+    align-items: center; */
+    border: none;
+}
+
+.inputPostContent {
+    width: 600px;
+    height: 245px;
+}
+
+.buttonWrapper {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+
+.postButton {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 16px;
+    background-color: #757575;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.inputPostTitle,
+.postButton:focus {
+    outline: none;
+    border: none;
+}
