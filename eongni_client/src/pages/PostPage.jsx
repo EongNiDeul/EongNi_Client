@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "../styles/pages/PostPage.module.css";
 import { useNavigate } from "react-router-dom";
+import PostItem from "../components/PostItem";
 
 function PostPage() {
   const [search, setSearch] = useState("");
@@ -16,9 +17,15 @@ function PostPage() {
     // 정렬 기능 추가 시 여기서 처리
   };
 
+  // 게시글 생성 페이지로 이동 : 가현현
   const goToCreatePost = () => {
     navigate("/CreatePostPage");
   };
+  // 댓글 있는 페이지로 아이디 넘기기 : 가현
+  const goToDetail = (post) => {
+    navigate(`/PostDetailPage/${post.id}`, { state: post });
+  };
+
 
   const posts = [
     {
@@ -77,7 +84,14 @@ function PostPage() {
 
         <div className={styles.postList}>
           {posts.map((post) => (
-            <div key={post.id} className={styles.postCard}>
+            // 게시글 상세페이지로 이동 : 가현
+            <PostItem
+              key={post.id}
+              post={post}
+              onClick={goToDetail}
+              showActions={true}
+            />))}
+          {/* <div key={post.id} className={styles.postCard} onClick={() => goToDetail(post)} style={{ cursor: "pointer" }}>
               <div className={styles.postHeader}>
                 <div>
                   <span className={styles.writer}>{post.writer}</span>
@@ -98,7 +112,7 @@ function PostPage() {
                 <div className={styles.postContent}>{post.content}</div>
               </div>
             </div>
-          ))}
+          ))} */}
         </div>
       </div>
     </div>
