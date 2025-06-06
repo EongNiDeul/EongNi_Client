@@ -5,7 +5,8 @@ import LoginPage from "./pages/LoginPage";
 import StartPage from "./pages/StartPage";
 import SignupPage from "./pages/SignupPage";
 import PostPage from "./pages/PostPage";
-import CreatePostPage from "./pages/CreatePost";
+import CreatePostPage from "./pages/CreatePostPage";
+import PostDetailPage from "./pages/PostDetailPage"
 
 function App() {
   return (
@@ -25,6 +26,7 @@ const Main = () => {
         <Route path="/SignupPage" element={<SignupPage />} />
         <Route path="/PostPage" element={<PostPage />} />
         <Route path="/CreatePostPage" element={<CreatePostPage />} />
+        <Route path="/PostDetailPage/:id" element={<PostDetailPage />} />
       </Routes>
     </div>
   );

@@ -1,0 +1,138 @@
+.pageWrapper {
+    margin-top: 100px;
+    width: 1200px;
+    height: 100vh;
+    padding: 40px 0;
+    display: flex;
+    gap: 40px;
+}
+
+
+
+.innerBox {
+    width: 640px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.postHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.writer {
+    font-weight: bold;
+    margin-right: 30px;
+}
+
+.date {
+    color: #555;
+    font-size: 20px;
+}
+
+.dateNote {
+    color: #999;
+    font-size: 12px;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+.edit,
+.delete {
+    background: none;
+    border: none;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.delete {
+    color: red;
+}
+
+.postTitle {
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.postContent {
+    margin-top: 10px;
+    font-size: 19px;
+    align-items: start;
+    text-align: left;
+
+}
+
+.postInfo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+
+}
+
+.commentSection {
+    text-align: left;
+}
+
+.commentContainer {
+    border: 1px solid black;
+    height: 500px;
+    width: 400px;
+    border-radius: 10px;
+    overflow-y: auto;
+    /* 세로 스크롤 */
+    overflow-x: hidden;
+    /* 가로 스크롤 숨김 */
+    padding-right: 10px;
+    /* 스크롤바와 텍스트 간격 */
+}
+
+/* 댓글 작성하기 */
+.commentInputBox {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.userNickname,
+.completeBtn {
+    margin: 0;
+    padding: 0;
+}
+
+.commentInput {
+    height: 60px;
+    border-radius: 8px;
+}
+
+.completeBtn {
+    border: none;
+    cursor: pointer;
+    text-align: end;
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+.commentBox {
+    margin: 20px;
+}
+
+.commentHeader {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.commentFooter {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
