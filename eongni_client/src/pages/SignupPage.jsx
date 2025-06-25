@@ -1,22 +1,42 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import styles from "../styles/pages/SignupPage.module.css";
 
 function SignupPage() {
   const [nickname, setNickname] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [message, setMessage] = useState("");
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("닉네임:", nickname);
-    console.log("비밀번호:", password);
-    console.log("비밀번호 확인:", confirmPassword);
+
+    try {
+      const response = await axios.post("http://localhost:3000/api/user/register", {
+        nickname,
+        password,
+        confirmPassword,
+      });
+
+      setMessage("✅ 회원가입이 완료되었습니다!");
+      setNickname("");
+      setPassword("");
+      setConfirmPassword("");
+
+      // 로그인 페이지로 이동
+      navigate("/LoginPage");
+    } catch (error) {
+      setMessage("❌ " + (error.response?.data?.message || "회원가입 실패"));
+    }
   };
 
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>회원가입</h2>
       <form onSubmit={handleSubmit} className={styles.form}>
+        {/* 닉네임 */}
         <div className={styles.inputGroup}>
           <label htmlFor="nickname">닉네임</label>
           <input
@@ -28,6 +48,7 @@ function SignupPage() {
           />
         </div>
 
+        {/* 비밀번호 */}
         <div className={styles.inputGroup}>
           <label htmlFor="password">비밀번호</label>
           <input
@@ -39,9 +60,13 @@ function SignupPage() {
           />
         </div>
 
+        {/* 비밀번호 확인 */}
         <div className={styles.inputGroup}>
           <label htmlFor="confirmPassword">
-            비밀번호 확인 <span className={styles.success}>확인 완료</span>
+            비밀번호 확인{" "}
+            {confirmPassword && confirmPassword === password && (
+              <span className={styles.success}>확인 완료</span>
+            )}
           </label>
           <input
             id="confirmPassword"
@@ -56,6 +81,8 @@ function SignupPage() {
           회원가입
         </button>
       </form>
+
+      {message && <p>{message}</p>}
     </div>
   );
 }
